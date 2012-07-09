@@ -1,0 +1,327 @@
+@media screen {
+	
+	// Global elements
+	label {
+		float: left;
+		padding-top:@pad-sml - 2;
+		text-align: right;
+		width: @width-med;
+	}
+	label, 
+	button, 
+	select {
+		cursor: pointer;
+	}
+	select, 
+	input,
+	textarea {
+		background: @colour-sharp;
+		border: 1px solid @colour-compliment;
+		.box-shadow-inset(0, 0, @shadow-box-radius, @colour-compliment);
+		.box-sizing();
+		color: @colour-body;
+		.border-radius(@border-sml);
+		font-family: @font-family-1;
+		font-size: 1em;
+		margin: 0 0 0 @margin-med;
+		padding: @pad-sml @pad-sml @pad-sml @pad-sml;
+		width: @width-default;
+		
+		&:focus{
+			background: @colour-sharp;
+			border-color: @colour-compliment-dark;
+			.box-shadow();
+			color: @colour-body;
+			outline: none;
+			.transition();
+		}
+	}
+	fieldset {
+		position: relative;
+		
+		legend > span {
+			display: block;
+			left: 0;
+			padding-top: @pad-sml;
+			position: absolute;
+			text-align: right;
+			width: @width-med;
+    	}
+    }
+	
+	form {
+		
+		.require {
+			color: @colour-error;
+			font-size: 1.231em;
+			font-weight: 700;
+		}
+		
+		// Errors
+		span.error {
+			color: @colour-error;
+		}
+		.field .error {
+			border-color: @colour-error;
+			.box-shadow-inset();
+			
+			&:focus {
+				.box-shadow-inset(0, 0, @shadow-box-radius, @colour-error);
+			}
+		}	
+		.message {
+			display: block;
+			font-weight: 700;
+			padding: 0 0 @pad-sml @width-med;
+		}
+		.linear .message {
+			padding-left: 0;
+		}
+		
+		// Watermarks
+		.watermark {
+			color: @colour-compliment-dark;
+		}
+		.watermark-removed {
+			color: @colour-body;
+		}
+		
+		// General layout	
+		.form-row {
+			clear: left;
+			float: left;
+			margin-bottom: @margin-med;
+			padding-bottom: @pad-sml;
+			padding-top: @pad-sml;
+			width: 100%;
+		}
+		.field {
+			float: left;
+			width: @width-lrg;
+			
+			button {
+				margin:0 0 0 @margin-lrg;
+			}
+		}
+		.submit-row {
+			.border-radius(@border-sml);
+			clear: left;
+			float: left;
+			margin: 0 0 @margin-lrg;
+			padding: @pad-med 0 0;
+			width: 100%;
+			
+			button {
+				float: right;
+				margin:0 0 0 @margin-med;				
+				
+				&:hover,
+				&:focus {
+					float: right;
+				}
+			}
+			.link {
+				padding-top: @pad-sml;
+			}
+		}
+		
+		// Check boxes and radio buttons		
+		.check-box,
+		.radio-box {
+			margin: 0 0 @margin-med;
+			overflow: hidden;
+			padding-left: @width-med;
+			
+			input {
+				border: none;
+				cursor: pointer;
+				float: left;
+				position: relative;
+				top: 5px;
+				width: auto;
+			}
+			label {
+				padding-left: @pad-med;
+				float: left;
+				text-align: left;
+				width: auto;
+			}
+		}
+		
+		// Landscape for radio and checkboxes
+		.landscape {
+			.box-sizing();
+			padding-left: @width-med;
+			position: relative;
+			width: auto;
+			min-width: 100%;
+			
+			fieldset {
+				padding-left: @pad-med;
+			}
+			legend > span {
+				font-size: 1em;
+				left: -30%;
+				text-align: right;
+				width: @width-med;
+			} 
+			.field {
+				width: @width-default;
+			}
+			.plot {
+				float: left;
+				margin:0 @margin-med 0 0;
+				width: @width-sml;
+			}
+			select {
+				margin: 0;
+			}
+		}
+		
+		// Element widths		
+		.sml {
+			width: @width-sml;
+		}
+		.med {
+			width: @width-med;
+		}
+		.lrg {
+			width: @width-lrg;
+		}
+	}
+	
+	// Linear form layouts
+	.linear {
+	
+		// Landscape for radio and checkboxes
+		.landscape {
+			padding-left: @pad-sml;
+			
+			fieldset {
+				padding: 0;
+			}
+			
+			legend > span {
+				position: static;
+				padding: 0;
+				width: auto;
+			}
+		}
+		
+		// General linear layout
+		label {
+			float: none;
+			text-align: left;
+			width: auto;
+		}		
+		select, 
+		input,
+		textarea {
+			margin: 0;
+		}
+		.field {
+			clear: left;
+			padding: @pad-sml 0 0;
+			width:100%;
+		}
+		fieldset legend > span {
+			padding: 0 0 @pad-med;
+			position: static;
+			text-align: left;
+			width:100%;
+		}
+		.check-box,
+		.radio-box {
+			padding-left:0;
+		}
+	}
+	
+	// Error summary is inserted before the form
+	.error-summary {
+		border: 2px solid @colour-error;
+		.border-radius(@border-sml);
+		margin: 0 0 @margin-lrg;
+		overflow: hidden;
+		padding: @padding-lrg;
+		
+		h2 {
+			color: @colour-error;
+		}
+		a {
+			color: @colour-error;
+			font-weight: 700;
+		}
+	}
+	
+	// Buttons and call to actions
+	button::-moz-focus-inner {
+		border: 0;
+	}
+	button,
+	.secondary {
+		.background-gradient(@colour-compliment-med, @colour-compliment);
+		border: 1px solid @colour-compliment-dark;
+		.border-radius(@border-sml);
+		color: @colour-bold;
+		cursor: pointer;
+		float: left;
+		font-family: @font-family-1;
+		font-size: 1em;
+		line-height: 1;
+		margin: 0 @margin-med 0 0;
+		overflow: visible;
+		padding: @pad-med @pad-lrg @pad-med @pad-lrg;
+		.transition();
+		white-space: nowrap;
+		width: auto;
+		
+		&:hover,
+		&:focus {
+			border-color: @colour-compliment-darkest;
+			.box-shadow();
+			color: @colour-body;
+			outline: none;
+		}
+	}
+	.primary {
+		.background-gradient(@colour-action, @colour-action-med);
+		border-color: @colour-action-dark;
+		color: @colour-blur;
+		
+		&:hover,
+		&:focus {
+			border-color: @colour-action-darkest;
+			.box-shadow(0, 0, @shadow-box-radius, @colour-bold);
+			color: @colour-sharp;
+		}
+	}
+	button[disabled],
+	button[disabled]:hover,
+	.primary-disabled,
+	.primary-disabled:hover,
+	.primary-disabled:focus,
+	.secondary-disabled,
+	.secondary-disabled:hover,
+	.secondary-disabled:focus {
+		box-shadow: none;
+		color: @colour-body;
+		cursor: text;
+		.opacity();
+	}
+	.link {
+		background: none;
+		border: none;
+		box-shadow: none;
+		color: @colour-action;
+		float: none;
+		line-height:@line-height;					
+		margin: 0;
+		padding: 0;
+		text-decoration: @text-decoration;
+		
+		&:hover, 
+		&:focus {
+			text-decoration: @text-decoration-hover;
+		}
+	}
+}

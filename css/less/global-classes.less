@@ -1,0 +1,34 @@
+@media screen {
+
+	// Hidden classes
+	.access {
+		left: -9999em;
+		position: absolute;
+		top: -9999em;
+	}
+	.hide {
+		display: none;
+	}
+	.invisible {
+		visibility: hidden;
+	}
+	
+	// Images
+	.image-right {
+		float:right;
+		margin:0 0 @margin-sml @margin-lrg;	
+	}
+	.image-left {
+		float:right;
+		margin:0 @margin-lrg @margin-sml 0;	
+	}
+	
+	// Content
+	.tabula-rasa {
+		background: @colour-sharp;
+		border: 1px solid @colour-compliment-dark;
+		.border-radius(@border-sml);
+		margin: 0 0 @margin-lrg;
+		overflow: hidden;
+	}
+}
