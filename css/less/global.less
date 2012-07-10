@@ -68,13 +68,16 @@
 	p {
 		margin-bottom: @margin-lrg;
 	}
+	ol,
 	ul {
-		list-style: @list-primary;
-		margin: 0 0 @margin-lrg 30px;
+		list-style-position: inside;
+		margin: 0 0 @margin-lrg @margin-lrg;
+	}
+	ul {
+		list-style-type: @list-primary;
 	}
 	ol {
-		list-style: @list-secondary;
-		margin: 0 0 @margin-lrg 30px;
+		list-style-type: @list-secondary;
 	}
 	li {
 		margin: 0 0 @margin-sml;
@@ -105,17 +108,18 @@
 			font-family: @font-family-2;
 			font-size: 2em;
 			margin:0 0 @margin-sml;
-		}		
+		}
+		td,
+		th {
+			border-left: 1px solid @colour-compliment;
+			padding: @padding-med;
+		}	
 		th {
 			background: @colour-compliment-light;
-			border-left: 1px solid @colour-compliment;
 			font-weight: 700;
-			padding: @padding-med;
 		}
 		td {
-			border-left: 1px solid @colour-compliment;
 			border-top: 1px solid @colour-compliment;
-			padding: @padding-med;
 		}
 	}
 	
@@ -197,7 +201,7 @@
 	p,
 	ul,
 	table {
-		margin: @margin-med;
+		margin-bottom: @margin-med;
 	}
 }
 
@@ -221,5 +225,12 @@
 	ul,
 	table {
 		margin-bottom: @margin-sml;
+	}
+	
+	table {
+		td,
+		th {
+			padding: @padding-sml;
+		}
 	}
 }
