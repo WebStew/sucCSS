@@ -29,12 +29,12 @@
 		width: @width-default;
 		
 		&:focus {
+			.transition();
 			background: @colour-sharp;
-			border-color: @colour-compliment-dark;
-			.box-shadow();
+			border-color: @colour-action;
+			.box-shadow(0, 0, @shadow-box-radius, @colour-action);
 			color: @colour-body;
 			outline: none;
-			.transition();
 		}
 	}
 	fieldset {
@@ -64,24 +64,22 @@
 		}
 		.field .error {
 			border-color: @colour-error;
-			.box-shadow-inset();
+			.box-shadow-inset(0, 0, @shadow-box-radius, @colour-error);
 			
 			&:focus {
-				.box-shadow-inset(0, 0, @shadow-box-radius, @colour-error);
+				.box-shadow(0, 0, @shadow-box-radius, @colour-error);
 			}
 		}	
 		.message {
 			display: block;
 			font-weight: 700;
-			padding: 0 0 @pad-sml @width-med;
-		}
-		.linear .message {
-			padding-left: 0;
+			padding:0 0 0 @pad-med;
+			margin:0 0 @margin-sml @width-med;
 		}
 		
 		// Watermarks
 		.watermark {
-			color: @colour-compliment-dark;
+			color: @colour-compliment-darkest;
 		}
 		.watermark-removed {
 			color: @colour-body;
@@ -219,6 +217,10 @@
 		input,
 		textarea {
 			margin: 0;
+		}
+		.message {
+			margin-left: 0;
+			padding-left: 0;
 		}
 		.field {
 			clear: left;

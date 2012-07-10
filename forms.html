@@ -33,6 +33,16 @@
 				<div class="grid-primary">
 					<div class="pad">
 						<h2>General form elements horizontal layout</h2>
+						<div class="error-summary">
+							<h2>
+								<span class="access">Error - </span>Unfortunately there are 4 error(s) on the form
+							</h2>
+							<p><strong>Please correct the following errors and resubmit the form :</strong></p>
+							<ol class="list-plain">
+								<li><a href="#field-4" class="error-link">This is an error message.</a></li>
+								<li><a href="#field-14" class="error-link">This is an error message.</a></li>
+							</ol>
+						</div>
 						<form action="#" method="post">
 							<div class="form-row landscape">
 								<fieldset>
@@ -166,13 +176,14 @@
 							<div class="form-row">
 								<label for="field-2">Medium text input</label>
 								<div class="field">
-									<input type="text" id="field-2" class="med" name="field-2">
+									<input type="text" id="field-2" class="med watermark" name="field-2" value="e.g Watermark">
 								</div>
 							</div>
 							<div class="form-row">
+								<span class="error message">This is an error message</span>
 								<label for="field-4">Large text input</label>
 								<div class="field">
-									<input type="text" id="field-4" class="lrg" name="field-4">
+									<input type="text" id="field-4" class="lrg error" name="field-4">
 								</div>
 							</div>
 							<div class="form-row">
@@ -409,13 +420,14 @@
 							<div class="form-row">
 								<label for="field-12">Medium text input</label>
 								<div class="field">
-									<input type="text" id="field-12" class="med" name="field-12">
+									<input type="text" id="field-12" class="med watermark" name="field-12" value="e.g Watermark">
 								</div>
 							</div>
 							<div class="form-row">
+								<span class="error message">This is an error message</span>
 								<label for="field-14">Large text input</label>
 								<div class="field">
-									<input type="text" id="field-14" class="lrg" name="field-14">
+									<input type="text" id="field-14" class="lrg error" name="field-14">
 								</div>
 							</div>
 							<div class="form-row">

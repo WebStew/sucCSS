@@ -80,13 +80,13 @@
 }
 @media screen, print {
   ::selection {
-    background: #f5f5f5;
-    color: #333333;
+    background: #00a9e0;
+    color: #ffffff;
     text-shadow: none;
   }
   ::-moz-selection {
-    background: #f5f5f5;
-    color: #333333;
+    background: #00a9e0;
+    color: #ffffff;
     text-shadow: none;
   }
   ::-webkit-scrollbar {
@@ -101,14 +101,14 @@
     border-left: 1px solid #d9d9d9;
   }
   ::-webkit-scrollbar-thumb {
-    background: #eeeeee;
-    border: 1px solid #cccccc;
+    background: #00759b;
+    border: 1px solid #016484;
   }
   ::-webkit-scrollbar-thumb:hover {
-    -webkit-box-shadow: inset 0 0 3px #aaaaaa;
-    -moz-box-shadow: inset 0 0 3px #aaaaaa;
-    box-shadow: inset 0 0 3px #aaaaaa;
-    background: #d9d9d9;
+    background: #00a9e0;
+    -webkit-box-shadow: inset 0 0 3px #00759b;
+    -moz-box-shadow: inset 0 0 3px #00759b;
+    box-shadow: inset 0 0 3px #00759b;
   }
   abbr[title] {
     border-bottom: 1px dotted #333333;
@@ -333,6 +333,10 @@
     margin: 0 0 15px;
     overflow: hidden;
   }
+  .list-plain {
+    list-style-type: none;
+    margin-left: 0;
+  }
 }
 @media screen {
   .page {
@@ -442,18 +446,18 @@
   select:focus,
   input:focus,
   textarea:focus {
-    background: #ffffff;
-    border-color: #cccccc;
-    -webkit-box-shadow: 0 0 3px #aaaaaa;
-    -moz-box-shadow: 0 0 3px #aaaaaa;
-    box-shadow: 0 0 3px #aaaaaa;
-    color: #333333;
-    outline: none;
     -moz-transition: all 0.25s ease-in-out;
     -ms-transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
     -o-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
+    background: #ffffff;
+    border-color: #00a9e0;
+    -webkit-box-shadow: 0 0 3px #00a9e0;
+    -moz-box-shadow: 0 0 3px #00a9e0;
+    box-shadow: 0 0 3px #00a9e0;
+    color: #333333;
+    outline: none;
   }
   fieldset {
     position: relative;
@@ -467,34 +471,32 @@
     width: 30%;
   }
   form .require {
-    color: #ff0000;
+    color: #ca4242;
     font-size: 1.231em;
     font-weight: 700;
   }
   form span.error {
-    color: #ff0000;
+    color: #ca4242;
   }
   form .field .error {
-    border-color: #ff0000;
-    -webkit-box-shadow: inset 0 0 3px #aaaaaa;
-    -moz-box-shadow: inset 0 0 3px #aaaaaa;
-    box-shadow: inset 0 0 3px #aaaaaa;
+    border-color: #ca4242;
+    -webkit-box-shadow: inset 0 0 3px #ca4242;
+    -moz-box-shadow: inset 0 0 3px #ca4242;
+    box-shadow: inset 0 0 3px #ca4242;
   }
   form .field .error:focus {
-    -webkit-box-shadow: inset 0 0 3px #ff0000;
-    -moz-box-shadow: inset 0 0 3px #ff0000;
-    box-shadow: inset 0 0 3px #ff0000;
+    -webkit-box-shadow: 0 0 3px #ca4242;
+    -moz-box-shadow: 0 0 3px #ca4242;
+    box-shadow: 0 0 3px #ca4242;
   }
   form .message {
     display: block;
     font-weight: 700;
-    padding: 0 0 5px 30%;
-  }
-  form .linear .message {
-    padding-left: 0;
+    padding: 0 0 0 10px;
+    margin: 0 0 5px 30%;
   }
   form .watermark {
-    color: #cccccc;
+    color: #aaaaaa;
   }
   form .watermark-removed {
     color: #333333;
@@ -616,6 +618,10 @@
   .linear textarea {
     margin: 0;
   }
+  .linear .message {
+    margin-left: 0;
+    padding-left: 0;
+  }
   .linear .field {
     clear: left;
     padding: 5px 0 0;
@@ -632,7 +638,7 @@
     padding-left: 0;
   }
   .error-summary {
-    border: 2px solid #ff0000;
+    border: 2px solid #ca4242;
     -webkit-border-radius: 2px 2px 2px 2px;
     -moz-border-radius: 2px 2px 2px 2px;
     border-radius: 2px 2px 2px 2px;
@@ -641,10 +647,10 @@
     padding: 15px 15px;
   }
   .error-summary h2 {
-    color: #ff0000;
+    color: #ca4242;
   }
   .error-summary a {
-    color: #ff0000;
+    color: #ca4242;
     font-weight: 700;
   }
   button::-moz-focus-inner {
