@@ -297,7 +297,7 @@
   p,
   ul,
   table {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   table td,
   table th {
@@ -316,13 +316,16 @@
   .invisible {
     visibility: hidden;
   }
-  .image-right {
+  .img-right {
     float: right;
     margin: 0 0 5px 15px;
   }
-  .image-left {
+  .img-left {
     float: right;
     margin: 0 15px 5px 0;
+  }
+  .justify {
+    text-align: justify;
   }
   .tabula-rasa {
     background: #ffffff;
@@ -332,10 +335,31 @@
     border-radius: 2px 2px 2px 2px;
     margin: 0 0 15px;
     overflow: hidden;
+    padding: 15px 10px 0;
   }
   .list-plain {
     list-style-type: none;
     margin-left: 0;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 850px) {
+  
+}
+@media only screen and (min-width: 320px) and (max-width: 519px) {
+  .img-right {
+    margin-left: 5px;
+  }
+  .img-left {
+    margin-right: 5px;
+  }
+  .tabula-rasa {
+    padding: 10px 5px 0;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .img-right,
+  .img-left {
+    margin: 0 0 5px;
   }
 }
 @media screen {
@@ -371,14 +395,10 @@
     width: 75%;
   }
   .pad {
-    overflow: hidden;
-    padding: 15px 15px;
+    padding: 0 10px;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 850px) {
-  .pad {
-    padding: 10px 10px;
-  }
   .w-20,
   .w-33,
   .grid-secondary > .w-25 {
@@ -397,7 +417,7 @@
 }
 @media only screen and (min-width: 320px) and (max-width: 519px) {
   .pad {
-    padding: 5px 5px;
+    padding: 0 5px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 479px) {
@@ -773,6 +793,9 @@
     padding: 0;
     width: auto;
   }
+  form .landscape .plot {
+    width: 30%;
+  }
   form label {
     float: none;
     text-align: left;
@@ -782,6 +805,9 @@
   form input,
   form textarea {
     margin: 0;
+  }
+  form .form-row {
+    margin: 0 0 5px;
   }
   form .field {
     clear: left;
