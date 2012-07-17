@@ -44,7 +44,11 @@
 }
 // Mobile landscape to small tablet
 @media only screen and ( min-width: 480px ) and ( max-width: 850px ) {
-
+	
+	// Content
+	.tabula-rasa  {
+		margin: 0 0 @margin-med;
+	}
 }
 
 // Mobile landscape and portrait
@@ -57,11 +61,6 @@
 	.img-left {
 		margin-right:@margin-sml;
 	}
-	
-	// Content
-	.tabula-rasa  {
-		padding:@pad-med @pad-sml @pad-sml;
-	}
 }
 
 // Mobile portrait
@@ -71,5 +70,10 @@
 	.img-right,
 	.img-left {
 		margin:0 0 @margin-sml;
+	}
+	
+	// Content
+	.tabula-rasa  {
+		margin: 0 0 @margin-sml;
 	}
 }
