@@ -18,5 +18,5 @@ HTML5 Doctor : http://html5doctor.com/html-5-reset-stylesheet/
 
 Mixins stolen from : http://designshack.net/articles/css/10-less-css-examples-you-should-steal-for-your-projects/
 
-There is an optional repsonsive CSS grid thrown in however this is still very much a work in progress. Just remove the @import 'layout.less'; line within main.less 
+There is an optional repsonsive CSS grid thrown in, still a work in progress but stands up pretty well to the current CSS within the sucCSS project. Just remove the @import 'layout.less'; line within main.less 
 to roll with your own / favourite grid setup.
