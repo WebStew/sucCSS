@@ -122,7 +122,7 @@
     -ms-filter: formatstring("\"progid:DXImageTransform.Microsoft.gradient(startColorStr='{0}', EndColorStr='{1}')\"", #eeeeee, #f5f5f5);
     color: #333333;
     font-size: 81.3%;
-    font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-family: Helvetica, Arial, Verdana;
     font-smooth: always;
     height: 100%;
     line-height: 1.5;
@@ -192,7 +192,7 @@
   }
   table caption {
     color: #555555;
-    font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+    font-family: Verdana, Helvetica, Arial;
     font-size: 2em;
     margin: 0 0 5px;
   }
@@ -202,11 +202,14 @@
     padding: 10px 10px;
   }
   table th {
-    background: #f5f5f5;
+    background: #eeeeee;
     font-weight: 700;
   }
   table td {
     border-top: 1px solid #d9d9d9;
+  }
+  table tbody tr:nth-child(2n) {
+    background: #eeeeee;
   }
   h1,
   h2,
@@ -220,7 +223,7 @@
   .h4,
   .h5 {
     color: #555555;
-    font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+    font-family: Verdana, Helvetica, Arial;
     font-weight: 400;
     font-size: 1em;
     margin: 0 0 15px;
@@ -445,7 +448,7 @@
     color: #00a9e0;
     cursor: pointer;
     float: right;
-    font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-family: Helvetica, Arial, Verdana;
     font-size: 1em;
     line-height: 1;
     margin: 0 0 0 10px;
@@ -506,6 +509,16 @@
     color: #ffffff;
     text-decoration: none;
   }
+  .button-primary-pressed,
+  .button-primary-pressed:hover,
+  .button-primary-pressed:focus {
+    background: #0081ab;
+    border-color: #00759b;
+    -webkit-box-shadow: inset 0 0 3px #00759b;
+    -moz-box-shadow: inset 0 0 3px #00759b;
+    box-shadow: inset 0 0 3px #00759b;
+    color: #f5f5f5;
+  }
   button[disabled],
   .button-disabled,
   .button-disabled:hover,
@@ -516,6 +529,20 @@
     -moz-opacity: 0.4;
     -khtml-opacity: 0.4;
     opacity: 0.4;
+  }
+  .button-pressed,
+  .button-pressed:hover,
+  .button-pressed:focus {
+    cursor: text;
+    text-decoration: none;
+  }
+  .button-secondary-pressed {
+    background: #e1e1e1;
+    border-color: #bbbbbb;
+    -webkit-box-shadow: inset 0 0 3px #bbbbbb;
+    -moz-box-shadow: inset 0 0 3px #bbbbbb;
+    box-shadow: inset 0 0 3px #bbbbbb;
+    color: #666666;
   }
   label {
     float: left;
@@ -543,7 +570,7 @@
     -webkit-border-radius: 2px 2px 2px 2px;
     -moz-border-radius: 2px 2px 2px 2px;
     border-radius: 2px 2px 2px 2px;
-    font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-family: Helvetica, Arial, Verdana;
     font-size: 1em;
     margin: 0 0 0 10px;
     padding: 5px 5px 5px 5px;
@@ -582,23 +609,23 @@
     width: 30%;
   }
   form .require {
-    color: #ca4242;
+    color: #c54b4b;
     font-size: 1.231em;
     font-weight: 700;
   }
   form span.error {
-    color: #ca4242;
+    color: #c54b4b;
   }
   form .field .error {
-    border-color: #ca4242;
-    -webkit-box-shadow: inset 0 0 3px #ca4242;
-    -moz-box-shadow: inset 0 0 3px #ca4242;
-    box-shadow: inset 0 0 3px #ca4242;
+    border-color: #c54b4b;
+    -webkit-box-shadow: inset 0 0 3px #c54b4b;
+    -moz-box-shadow: inset 0 0 3px #c54b4b;
+    box-shadow: inset 0 0 3px #c54b4b;
   }
   form .field .error:focus {
-    -webkit-box-shadow: 0 0 3px #ca4242;
-    -moz-box-shadow: 0 0 3px #ca4242;
-    box-shadow: 0 0 3px #ca4242;
+    -webkit-box-shadow: 0 0 3px #c54b4b;
+    -moz-box-shadow: 0 0 3px #c54b4b;
+    box-shadow: 0 0 3px #c54b4b;
   }
   form .message {
     display: block;
@@ -738,7 +765,7 @@
     padding-left: 0;
   }
   .error-summary {
-    border: 2px solid #ca4242;
+    border: 2px solid #c54b4b;
     -webkit-border-radius: 2px 2px 2px 2px;
     -moz-border-radius: 2px 2px 2px 2px;
     border-radius: 2px 2px 2px 2px;
@@ -747,10 +774,10 @@
     padding: 15px 15px;
   }
   .error-summary h2 {
-    color: #ca4242;
+    color: #c54b4b;
   }
   .error-summary a {
-    color: #ca4242;
+    color: #c54b4b;
     font-weight: 700;
   }
 }

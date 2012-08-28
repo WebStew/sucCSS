@@ -55,6 +55,14 @@
 			text-decoration: @text-decoration;
 		}
 	}
+	.button-primary-pressed,
+	.button-primary-pressed:hover,
+	.button-primary-pressed:focus {
+		background: @colour-action-med;
+		border-color: @colour-action-dark;
+		.box-shadow-inset(0, 0, @shadow-box-radius, @colour-action-dark);
+		color: @colour-compliment-light;
+	}
 	button[disabled],
 	.button-disabled,
 	.button-disabled:hover,
@@ -62,6 +70,18 @@
 		box-shadow: none;
 		cursor: text;
 		.opacity();
+	}
+	.button-pressed,
+	.button-pressed:hover,
+	.button-pressed:focus {
+	    cursor: text;
+		text-decoration: @text-decoration;
+	}
+	.button-secondary-pressed {
+		background: @color-button-bg-pressed;
+		border-color: @colour-compliment-darker;
+		.box-shadow-inset(0, 0, @shadow-box-radius, @colour-compliment-darker);
+		color: @colour-bold-light;	
 	}
 
 	// Global elements

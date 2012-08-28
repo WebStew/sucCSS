@@ -113,11 +113,16 @@
 			padding: @padding-med;
 		}	
 		th {
-			background: @colour-compliment-light;
+			background: @colour-compliment-med;
 			font-weight: 700;
 		}
 		td {
 			border-top: 1px solid @colour-compliment;
+		}
+		tbody {
+			tr:nth-child(2n) {
+				background: @colour-compliment-med;
+			}
 		}
 	}
 	
