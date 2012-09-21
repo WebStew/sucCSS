@@ -1,6 +1,6 @@
 
 // Border radius
-.border-radius(@radius: @border-med) {
+.border-radius(@radius: @border-sml) {
 	.border-radius(@radius, @radius);
 }
 .border-radius(@radius-top, @radius-bottom) {
@@ -34,6 +34,15 @@
 	box-sizing: @size;
 }
 
+// Word breaks 
+.break-word() {
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
 // Opacity
 .opacity(@op: @opacity) {
 	filter:			alpha(opacity=@op);
@@ -43,7 +52,7 @@
 }
 
 // Gradients
-.background-gradient(@from: @colour-compliment-med, @to: @colour-compliment-light) {
+.background-gradient(@from: @colour-sharp, @to: @colour-button-bg-pressed) {
 	background:			@from;
 	background-image:	-webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
 	background-image:	-moz-linear-gradient(top, @from, @to);

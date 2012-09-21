@@ -5,7 +5,7 @@
 	.button {
 		background: none;
 		border: 1px solid transparent;
-		.border-radius(@border-sml);
+		.border-radius();
 		color: @colour-action;
 		cursor: pointer;
 		float: right;
@@ -14,7 +14,7 @@
 		line-height: 1;
 		margin: 0 0 0 @margin-med;
 		overflow: visible;
-		padding: @pad-med @pad-lrg @pad-med @pad-lrg;
+		padding: (@pad-med - 3) @pad-med (@pad-med - 2);
 		text-decoration: @text-decoration;
 		.transition();
 		white-space: nowrap;
@@ -29,19 +29,6 @@
 	button::-moz-focus-inner {
 		border: 0;
 	}
-	.button-secondary {
-		.background-gradient(@colour-compliment-med, @colour-compliment);
-		border-color: @colour-compliment-dark;
-		color: @colour-bold;
-		
-		&:hover,
-		&:focus {
-			border-color: @colour-compliment-darkest;
-			.box-shadow();
-			color: @colour-body;
-			text-decoration: @text-decoration;
-		}
-	}
 	.button-primary {
 		.background-gradient(@colour-action, @colour-action-med);
 		border-color: @colour-action-dark;
@@ -55,6 +42,58 @@
 			text-decoration: @text-decoration;
 		}
 	}
+	.ie .button-primary {
+		background: @colour-action url('images/ie/blue.png') 0 0 repeat-x;
+		
+		&:hover,
+		&:focus {
+			background: @colour-action;
+		}
+	}
+	.button-secondary,
+	.ui-datepicker-trigger {
+		.background-gradient();
+		border-color: @colour-compliment-dark;
+		color: @colour-secondary-light;
+		
+		&:hover,
+		&:focus {
+			border-color: @colour-shadow;
+			.box-shadow();
+			color: @colour-action-dark;
+			text-decoration: @text-decoration;
+		}
+	}
+	.ie .button-secondary,
+	.ie .ui-datepicker-trigger {
+		background: @colour-button-bg-pressed url('images/ie/grey.png') 0 0 repeat-x;
+		
+		&:hover,
+		&:focus {
+			background: @colour-compliment-light;
+			border-color: @colour-compliment;
+		}
+	}
+	.button-tertiary {
+		.background-gradient(@colour-error, @colour-error-dark);
+		border-color: @colour-error-dark;
+		color: @colour-blur;
+		
+		&:hover,
+		&:focus {
+			border-color: @colour-error-darker;
+			.box-shadow(0, 0, @shadow-box-radius, @colour-bold);
+			color: @colour-sharp;
+			text-decoration: @text-decoration;
+		}
+		
+	}
+	.button-pressed,
+	.button-pressed:hover,
+	.button-pressed:focus {
+	    cursor: text;
+		text-decoration: @text-decoration;
+	}
 	.button-primary-pressed,
 	.button-primary-pressed:hover,
 	.button-primary-pressed:focus {
@@ -62,6 +101,16 @@
 		border-color: @colour-action-dark;
 		.box-shadow-inset(0, 0, @shadow-box-radius, @colour-action-dark);
 		color: @colour-compliment-light;
+		cursor: text;
+	}
+	.button-secondary-pressed,
+	.button-secondary-pressed:hover,
+	.button-secondary-pressed:focus {
+		background: @colour-button-bg-pressed;
+		border-color: @colour-compliment-darker;
+		.box-shadow-inset(0, 0, @shadow-box-radius, @colour-compliment-darker);
+		color: @colour-bold-light;
+		cursor: text;
 	}
 	button[disabled],
 	.button-disabled,
@@ -71,25 +120,18 @@
 		cursor: text;
 		.opacity();
 	}
-	.button-pressed,
-	.button-pressed:hover,
-	.button-pressed:focus {
-	    cursor: text;
-		text-decoration: @text-decoration;
-	}
-	.button-secondary-pressed {
-		background: @color-button-bg-pressed;
-		border-color: @colour-compliment-darker;
-		.box-shadow-inset(0, 0, @shadow-box-radius, @colour-compliment-darker);
-		color: @colour-bold-light;	
-	}
 
 	// Global elements
 	label {
+		.box-sizing();
 		float: left;
-		padding-top:@pad-sml - 2;
+		padding-top: @pad-sml - 2;
+		padding-right: @pad-med;
 		text-align: right;
 		width: @width-med;
+	}
+	.ie label {
+		padding-top: @pad-sml;
 	}
 	label, 
 	button, 
@@ -104,11 +146,11 @@
 		.box-shadow-inset(0, 0, @shadow-box-radius, @colour-compliment);
 		.box-sizing();
 		color: @colour-body;
-		.border-radius(@border-sml);
+		.border-radius();
 		font-family: @font-family-1;
 		font-size: 1em;
-		margin: 0 0 0 @margin-med;
-		padding: @pad-sml @pad-sml @pad-sml @pad-sml;
+		margin: 0;
+		padding: @pad-sml;
 		.transition();
 		width: @width-default;
 		
@@ -119,6 +161,26 @@
 			.box-shadow(0, 0, @shadow-box-radius, @colour-action);
 			color: @colour-body;
 			outline: none;
+		}
+	}
+	input,
+	textarea {
+		padding-top: (@pad-sml + 1);
+		padding-bottom: (@pad-sml + 1);
+	}
+	.input-plain {
+		background: transparent;
+		border: none;
+		box-shadow: none;
+		.border-radius(0);
+		color: @colour-bold;
+		margin: -1px 0;
+		padding: 0;
+		
+		&:focus {
+			background: transparent;
+			border-color: transparent;
+			box-shadow: none;
 		}
 	}
 	fieldset {
@@ -136,10 +198,10 @@
 	
 	form {
 		
-		.require {
-			color: @colour-error;
-			font-size: 1.231em;
+		em.required {
+			color: @colour-error-dark;
 			font-weight: 700;
+			margin:0 1px 0 0;
 		}
 		
 		// Errors
@@ -151,6 +213,7 @@
 			.box-shadow-inset(0, 0, @shadow-box-radius, @colour-error);
 			
 			&:focus {
+				border-color: @colour-error-dark;
 				.box-shadow(0, 0, @shadow-box-radius, @colour-error);
 			}
 		}	
@@ -173,7 +236,7 @@
 		.form-row {
 			clear: left;
 			float: left;
-			margin-bottom: @margin-med;
+			margin-bottom: @margin-sml;
 			padding-bottom: @pad-sml;
 			padding-top: @pad-sml;
 			width: 100%;
@@ -183,11 +246,11 @@
 			width: @width-lrg;
 			
 			button {
-				margin:0 0 0 @margin-lrg;
+				margin:0 0 0 @margin-med;
 			}
 		}
 		.submit-row {
-			.border-radius(@border-sml);
+			.border-radius();
 			clear: left;
 			float: left;
 			margin: 0 0 @margin-lrg;
@@ -198,11 +261,12 @@
 		// Check boxes and radio buttons		
 		.check-box,
 		.radio-box {
-			margin: 0 0 @margin-med;
+			margin: 0 0 @margin-sml;
 			overflow: hidden;
 			padding-left: @width-med;
 			
 			input {
+				background: transparent;
 				border: none;
 				cursor: pointer;
 				float: left;
@@ -242,6 +306,18 @@
 				float: left;
 				margin:0 @margin-med 0 0;
 				width: @width-sml;
+				
+				input {
+					float: left;
+				}
+				label {
+					float: left;
+					padding: @pad-sml 0 0;
+					width: 100%;
+				}
+			}
+			.plot-med {
+				width: @width-med;
 			}
 			select {
 				margin: 0;
@@ -265,7 +341,7 @@
 	
 		// Landscape for radio and checkboxes
 		.landscape {
-			padding-left: @pad-sml;
+			padding-left: 0;
 			
 			fieldset {
 				padding: 0;
@@ -283,11 +359,6 @@
 			float: none;
 			text-align: left;
 			width: auto;
-		}		
-		select, 
-		input,
-		textarea {
-			margin: 0;
 		}
 		.message {
 			margin-left: 0;
@@ -312,19 +383,7 @@
 	
 	// Error summary is inserted before the form
 	.error-summary {
-		border: 2px solid @colour-error;
-		.border-radius(@border-sml);
-		margin: 0 0 @margin-lrg;
-		overflow: hidden;
-		padding: @padding-lrg;
-		
-		h2 {
-			color: @colour-error;
-		}
-		a {
-			color: @colour-error;
-			font-weight: 700;
-		}
+		color: @colour-error-dark;
 	}
 }
 
@@ -345,16 +404,6 @@
 
 // Mobile landscape and portrait
 @media only screen and ( min-width: 320px ) and ( max-width: 519px ) {
-
-	// General elements
-	select, 
-	input,
-	textarea {
-		padding: @pad-med @pad-med @pad-med @pad-med;
-	}
-	button {
-		margin: 0 0 0 @margin-sml;
-	}
 
 	// Form spacing reductions
 	form {

@@ -12,32 +12,13 @@
 		text-shadow: none;
 	}
 	
-	// Custom webkit scrollbars
-	::-webkit-scrollbar {
-		background: @colour-compliment-light;
-		.border-radius(@border-sml);
-		width: 12px;
-	}
-	::-webkit-scrollbar-track {
-		background: @colour-blur;
-		border-left: 1px solid @colour-compliment;
-	}
-	::-webkit-scrollbar-thumb {
-		background: @colour-action-dark;
-		border: 1px solid @colour-action-darkest;
-	}
-	::-webkit-scrollbar-thumb:hover {
-		background: @colour-action;
-		.box-shadow-inset(0, 0, @shadow-box-radius, @colour-action-dark);
-	}
-	
 	// Global elements
 	abbr[title] {
 		border-bottom: 1px dotted @colour-body;
 		cursor: help;
 	}
 	body {
-	 	.background-gradient();
+	 	.background-gradient(@colour-compliment-light, @colour-sharp);
 		color: @colour-body;
 		font-size: @font-size-base;
 		font-family: @font-family-1;
@@ -52,11 +33,11 @@
 	pre {
 		background: @colour-compliment-light;
 		border:1px dotted @colour-compliment;
-		.border-radius(@border-sml);
+		.border-radius();
 		display:block;
 		font-family: @font-family-code;
 		margin:0 0 @margin-lrg;
-		padding: @padding-lrg;
+		padding: @pad-lrg;
 		.wrap();
 	}
 	html {
@@ -64,12 +45,12 @@
 		overflow-y: scroll;
 	}
 	p {
-		margin-bottom: @margin-lrg;
+		margin-bottom: @margin-med;
 	}
 	ol,
 	ul {
 		list-style-position: inside;
-		margin: 0 0 @margin-lrg @margin-lrg;
+		margin: 0 0 @margin-med @margin-lrg;
 	}
 	ul {
 		list-style-type: @list-primary;
@@ -78,46 +59,42 @@
 		list-style-type: @list-secondary;
 	}
 	li {
-		margin: 0 0 @margin-sml;
+		margin: 0 0 @margin-med;
 	}
 	small {
 		font-size: 0.846em;
 	}
 	strong,
 	b {
-		color: @colour-bold;
+		color: @colour-secondary-light;
 		font-weight: 700;
 	}
 	table {
-		background: @colour-blur;
+		background: @colour-sharp;
 		border-collapse: collapse;
 		border-spacing: 0;
-		border-top: 1px solid @colour-compliment;
-		border-right: 1px solid @colour-compliment;
-		border-bottom: 1px solid @colour-compliment;
-		.border-radius(@border-sml);
+		.border-radius();
 		font-size: 1em;
-		margin: 0 0 @margin-lrg;
-		table-layout: fixed;
+		margin: 0 0 @margin-med;
 		width: 100%;
 		
 		caption {
-			color: @colour-bold;
-			font-family: @font-family-2;
-			font-size: 2em;
-			margin:0 0 @margin-sml;
+			color: @colour-secondary-light;
+			font-family: @font-family-1;
+			font-size: 1em;
+			font-weight: 700;
+			margin:0 0 @margin-med;
 		}
 		td,
 		th {
-			border-left: 1px solid @colour-compliment;
-			padding: @padding-med;
+			padding: @pad-sml;
 		}	
 		th {
 			background: @colour-compliment-med;
+			color: @colour-bold;
 			font-weight: 700;
 		}
 		td {
-			border-top: 1px solid @colour-compliment;
 		}
 		tbody {
 			tr:nth-child(2n) {
@@ -139,36 +116,24 @@
 	.h3,
 	.h4,
 	.h5 {
-		color: @colour-bold;
-		font-family: @font-family-2;
-		font-weight: 400;
+		color: @colour-secondary-light;
+		font-family: @font-family-1;
+		font-weight: 700;
 		font-size: 1em;
-		margin: 0 0 @margin-lrg;
+		margin: 0 0 @margin-sml;
 	}
 	h1,
 	.h1 {
-		font-size: 2.769em;
+		color: @colour-sharp;
+		font-weight: 400;
 		letter-spacing: @letter-spacing;
 		line-height: 1.2;
+		margin: 0 0 @margin-med;
+		text-shadow: 1px 1px 1px @colour-secondary;
 		text-transform: uppercase;
 	}
-	h2,
-	.h2 {
-		font-size: 2em;
-		line-height: 1.2;
-	}
-	h3,
-	.h3 {
-		font-size: 1.846em;	
-	}
-	h4,
-	.h4 {
-		font-size: 1.538em;
-	}
-	h5,
-	h6,
-	.h5 {
-		font-size: 1.231em;
+	h1 span {
+		color: @colour-bold-lightest;
 	}
 	
 	// Links
@@ -211,11 +176,6 @@
 // Mobile landscape and portrait
 @media only screen and ( min-width: 320px ) and ( max-width: 519px ) {
 	
-	// Reduce to mobile font size
-	body {
-		font-size: @font-size-mobile;
-	}
-	
 	// Reduce margin sizes
 	h1,
 	h2,
@@ -233,7 +193,7 @@
 	table {
 		td,
 		th {
-			padding: @padding-sml;
+			padding: @pad-sml;
 		}
 	}
 }

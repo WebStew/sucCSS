@@ -1,0 +1,171 @@
+@media screen {
+
+	// General UI
+	.ui-icon {
+		cursor: pointer;
+	}
+	
+	// UI Tabs
+	.ui-tabs {
+		.ui-tabs-hide {
+			display: none;
+		}
+	}
+	
+	// Dialog
+	.ui-widget-overlay {
+		background: @colour-overlay;
+		height: 100%;
+		left: 0;
+		.opacity();
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	.ie .ui-widget-overlay {
+		background:url('images/ie/black.png') 0 0 repeat;
+	}
+	.ui-dialog {
+		.box-shadow(0, 0, (@shadow-box-radius * 2), @colour-body);
+		display:none;
+		overflow:hidden;
+	}
+	.ui-dialog-titlebar {
+	 	.background-gradient();
+		border: 1px solid @colour-compliment;
+		.border-radius(@border-sml, @border-sml, 0, 0);
+		display: block;
+		overflow:hidden;
+		padding: (@pad-med - 2) @pad-med (@pad-med - 1);
+		
+		.ui-dialog-title {
+			
+			color: @colour-bold;
+			float: left;
+			font-size: 1em;
+			font-weight: 400;
+			line-height: 1;
+			margin: 0;
+		}
+	}
+	.ie .ui-dialog-titlebar {
+		background: @colour-button-bg-pressed url('images/ie/grey.png') 0 0 repeat-x;
+	}
+	.ui-dialog-content {
+		background: @colour-sharp;
+		border-left: 1px solid @colour-compliment;
+		border-right: 1px solid @colour-compliment;
+		position: relative;
+		padding: (@pad-med - 2) @pad-med (@pad-med - 1);
+	}
+	.ui-dialog-buttonpane {
+		background: @colour-sharp;
+		border-left: 1px solid @colour-compliment;
+		border-right: 1px solid @colour-compliment;
+		border-bottom: 1px solid @colour-compliment;
+		.border-radius(0, 0, @border-sml, @border-sml);
+		overflow: hidden;
+		padding: (@pad-med - 2) @pad-med (@pad-med - 1);
+	}
+	
+	// Date picker
+	.ui-datepicker {
+		background: @colour-sharp;
+		border: 1px solid @colour-shadow;
+		.border-radius();
+		.box-shadow();
+		display: none;
+		margin: @margin-med 0;
+		padding: 0 0 2px;
+		z-index: 1000;
+    }
+    .ui-datepicker-trigger {
+    	float: left;
+    	padding: @pad-sml @pad-sml (@pad-sml + 1);
+    }
+	.ui-datepicker-header {
+		.background-gradient();
+		border-bottom: 1px solid @colour-compliment;
+		.border-radius(@border-sml, @border-sml, 0, 0);
+		overflow: hidden;
+		padding: @pad-sml;
+	}
+	.ie .ui-datepicker-header {
+		background: @colour-button-bg-pressed url('images/ie/grey.png') 0 0 repeat-x;
+	}
+	.ui-datepicker-title {
+		color: @colour-bold;
+		padding: 0 (@pad-lrg * 2);
+		text-align: center;
+	}
+	.ui-datepicker-calendar {
+		border: none;
+		margin: 0 (@margin-sml - 3);
+		table-layout: fixed;
+		width: 220px;
+		
+		td,
+		th {
+			background: @colour-sharp;
+			border: none;
+			text-align: center;
+		}
+		td {
+			padding: (@pad-sml - 3);
+			
+			a {
+				background: @colour-blur;
+				border: 1px solid @colour-compliment;
+				.border-radius();
+				display: block;
+				padding: (@pad-sml - 2) (@pad-sml - 4) (@pad-sml - 3);
+				
+				&.ui-state-active,
+				&:hover,
+				&:focus {
+					.background-gradient(@colour-action, @colour-action-med);
+					border-color: @colour-action-dark;
+					.box-shadow();
+					color: @colour-sharp;
+				}
+			}
+		}
+		tr:nth-child(2n) {
+			background: @colour-sharp;
+		}
+		.ui-state-disabled {
+			cursor: text;
+			.opacity();
+		}
+		.ui-state-highlight {
+			background: @colour-compliment-light;
+			border-color: @colour-compliment-dark;
+			color: @colour-bold;
+		}
+	}
+	.ie .ui-datepicker-calendar td a:hover,
+	.ie .ui-datepicker-calendar td a:focus {
+		background: @colour-action url('images/ie/blue.png') 0 0 repeat-x;
+	}
+    
+    // Accordion
+	.ui-accordion {
+		.ui-accordion-header {
+			cursor: pointer;
+		}
+		.data-head {
+			.border-radius(0);
+			border-top: 0;
+		}
+		.data-head:first-child {
+			.border-radius(@border-sml, @border-sml, 0, 0);
+			border-top: 1px solid @colour-compliment;
+		}
+		.data-body {
+			margin-bottom: 0;
+		}
+		.data-body-sml {
+			height: 198px;
+		}
+	}
+}

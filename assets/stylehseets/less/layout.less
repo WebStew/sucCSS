@@ -6,7 +6,7 @@
 		clear: left;
 		margin: 0 auto;
 		max-width: @page-max;
-		padding: 0 @pad-med 0 @pad-med;
+		padding: 0 @pad-med;
 	}
 
 	// Grid layout
@@ -31,8 +31,14 @@
 	.w-33 {
 		width: 33.33%;	
 	}
+	.w-40 {
+		width: 40%;
+	}
 	.w-50 {
 		width: 50%;	
+	}
+	.w-60 {
+		width: 60%;	
 	}
 	.w-75 {
 		width: 75%;	
@@ -40,20 +46,18 @@
 	
 	// Padding classes
 	.pad {
-		padding:0 @pad-med;
+		padding:0 @pad-sml;
+	}
+	.alpha {
+		padding-left: 0;
+	}
+	.omega {
+		padding-right: 0;
 	}
 }
 
 // Mobile landscape to small tablet
 @media only screen and ( min-width: 480px ) and ( max-width: 850px ) {
-
-	.page {
-		padding: 0 @pad-med;
-	}
-	
-	.pad {
-		padding: 0 @pad-med;
-	}
 
 	.w-20,
 	.w-33,
@@ -66,7 +70,9 @@
 		width: 100%;
 	}
 	.grid-primary > .w-25,
+	.grid-primary > .w-40,
 	.grid-primary > .w-50,
+	.grid-primary > .w-60,
 	.grid-primary > .w-75 {
 		width: 100%;
 	}
@@ -85,8 +91,9 @@
 
 	.grid {
 		width: 100%;
-	}	
-	.pad {
-		padding: 0 @pad-sml;
+	}
+	.alpha,
+	.omega {
+		padding: 0;
 	}
 }
